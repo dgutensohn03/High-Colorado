@@ -1,4 +1,4 @@
-const VERSION='high-colorado-v1.9-polished-ui';
+const VERSION='high-colorado-v2.0-explore-weather-maps';
 const CORE=['./','./index.html','./explore.html','./planner.html','./conditions.html','./learn.html','./offline.html','./manifest.webmanifest','./app.css','./peaks.js','./media.js','./icons/icon-192.svg','./icons/icon-512.svg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(VERSION).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

@@ -107,3 +107,14 @@ git add .
 git commit -m "Unify High Colorado explore, planning, conditions and open media"
 git push
 ```
+
+## v2.0 Explore / map / weather polish
+
+- Explore Peaks now switches cleanly between an interactive map and photo-rich list view.
+- Quick browse categories organize first-14er ideas, hiking routes, scrambling and planner-ready routes.
+- Peak map previews include open-license Wikimedia imagery and an explicit close control.
+- Peak detail pages include an interactive USGS topo trail/access map. Summit and verified trailhead are shown; route lines remain hidden until verified GPX geometry exists.
+- Summit weather now includes current conditions, seven-day NWS forecast, hourly forecast, active alerts and official live NWS radar access.
+- Build Trip can start with no objectives, can be cleared back to zero, and can switch between map selection and a photo-card route browser.
+- The Build Trip map no longer draws a line between separate mountains. Selected peaks are numbered by trip order only.
+- Service-worker cache: `high-colorado-v2.0-explore-weather-maps`.
