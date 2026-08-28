@@ -1,4 +1,8 @@
-# High Colorado — Installable 14er Planner PWA
+# High Colorado
+
+**v1.9 polished unified UI** — consistent alpine design system, unified desktop/mobile navigation, Explore → Plan → Conditions → Learn flow, open-license imagery, PWA/offline shell, and living NWS summit data.
+
+— Installable 14er Planner PWA
 
 This folder is a GitHub Pages-ready PWA wrapper around the current interactive High Colorado dashboard prototype.
 
@@ -71,4 +75,35 @@ Recommended production cadences:
 - CAIC: seasonally, after forecast issuance and again before departure when snow is relevant
 
 The static GitHub Pages frontend can directly consume public NWS APIs. Sources that require API keys, normalization, scraping restrictions, cross-origin workarounds, or change detection belong behind the production backend. Do not put private API keys in GitHub Pages JavaScript.
-# High-Colorado
+
+
+## v1.8 — Unified Explore experience
+
+- Adds `explore.html` with a searchable 58-peak catalogue.
+- Each peak opens an immersive Explore page with open-license imagery when available, exact-coordinate NWS weather, nearby-peak bearing/distance exploration, and source-aware route status.
+- Planner map previews now include an **Explore peak** action so discovery and planning form one workflow.
+- Navigation is reorganized around Discover, Plan, Conditions, and Learn.
+- 14ers.com summit panoramas are linked at the source rather than copied into the repository; see `docs/MEDIA_SOURCES.md`.
+- Service-worker cache bumped to v1.8 and includes the Explore page.
+
+## v1.8 unified product experience
+
+High Colorado now has one continuous product structure:
+
+- `index.html` — Home / guided entry points
+- `explore.html` — all 58 named 14ers, interactive USGS map, Wikimedia Commons open imagery, interactive panorama viewer, summit bearings, live NWS weather
+- `planner.html` — map-first multi-peak trip planner and day engine
+- `conditions.html` — live NWS forecast + active alerts with explicit source freshness
+- `learn.html` — visual class/risk education
+
+### Open media pipeline
+
+`media.js` searches Wikimedia Commons with the MediaWiki Action API, requests image metadata, filters for reusable/public-domain/Creative Commons licenses, and renders photographer/license/source attribution in the interface. High Colorado does not mirror 14ers.com panorama files; their 360° experiences stay linked to the original source.
+
+### Publish
+
+```bash
+git add .
+git commit -m "Unify High Colorado explore, planning, conditions and open media"
+git push
+```

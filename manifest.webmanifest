@@ -1,21 +1,44 @@
 {
-  "id": "/high-colorado/",
-  "name": "High Colorado 14er Planner",
+  "id": "/High-Colorado/",
+  "name": "High Colorado \u2014 14er Planner",
   "short_name": "High Colorado",
-  "description": "Visual, weather-aware planning for Colorado 14ers with offline climb briefings.",
-  "start_url": "./",
-  "scope": "./",
+  "description": "Explore Colorado 14ers, compare route context, plan trips, check live summit weather, and save offline climb information.",
+  "start_url": "/High-Colorado/",
+  "scope": "/High-Colorado/",
   "display": "standalone",
   "background_color": "#f4f7f5",
   "theme_color": "#10283d",
   "orientation": "any",
-  "categories": ["travel", "sports", "navigation", "weather"],
+  "categories": [
+    "travel",
+    "sports",
+    "navigation",
+    "weather"
+  ],
   "icons": [
-    {"src":"./icons/icon-192.svg","sizes":"192x192","type":"image/svg+xml","purpose":"any"},
-    {"src":"./icons/icon-512.svg","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+    {
+      "src": "./icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
   ],
   "shortcuts": [
-    {"name":"Build a trip","short_name":"Plan","url":"./?view=plan"},
-    {"name":"Field briefing","short_name":"Briefing","url":"./?view=field"}
+    {
+      "name": "Explore 14ers",
+      "short_name": "Explore",
+      "url": "./explore.html"
+    },
+    {
+      "name": "Build a trip",
+      "short_name": "Plan",
+      "url": "./planner.html"
+    }
   ]
 }
