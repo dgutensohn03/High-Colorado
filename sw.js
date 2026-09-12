@@ -1,5 +1,5 @@
-const VERSION='high-colorado-v2.0-explore-weather-maps';
-const CORE=['./','./index.html','./explore.html','./planner.html','./conditions.html','./learn.html','./offline.html','./manifest.webmanifest','./app.css','./peaks.js','./media.js','./icons/icon-192.svg','./icons/icon-512.svg'];
+const VERSION='high-colorado-v2.1-mobile-responsive';
+const CORE=['./','./index.html','./explore.html','./planner.html','./conditions.html','./learn.html','./offline.html','./manifest.webmanifest','./app.css','./responsive.css','./peaks.js','./media.js','./icons/icon-192.svg','./icons/icon-512.svg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(VERSION).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(u.hostname==='api.weather.gov'||u.hostname.endsWith('wikimedia.org'))return;if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(VERSION).then(c=>c.put(e.request,copy));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./offline.html'))));return}e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(net=>{if(net.ok&&u.origin===location.origin)caches.open(VERSION).then(c=>c.put(e.request,net.clone()));return net})))});
