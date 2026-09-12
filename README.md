@@ -1,5 +1,7 @@
 # High Colorado
 
+🌐 **Live Demo:** [High Colorado on GitHub Pages](https://dgutensohn03.github.io/High-Colorado/)
+
 **v1.9 polished unified UI** — consistent alpine design system, unified desktop/mobile navigation, Explore → Plan → Conditions → Learn flow, open-license imagery, PWA/offline shell, and living NWS summit data.
 
 — Installable 14er Planner PWA
