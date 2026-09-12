@@ -1,0 +1,139 @@
+/* Shared phone and tablet polish. Loaded last so every page follows one mobile contract. */
+html{max-width:100%;overflow-x:clip;-webkit-text-size-adjust:100%}
+body{min-width:320px;max-width:100%;overflow-x:clip}
+main,section,article,aside,.card,.stack,.main,.right{min-width:0}
+img,svg,video,canvas{max-width:100%}
+p,h1,h2,h3,h4,small,strong,a,button,label,.note,.source-note{overflow-wrap:anywhere}
+
+@media(hover:none),(pointer:coarse){
+  button,select,input,.btn,.tabs button,.browse-categories button,.view-switch button{min-height:44px}
+}
+
+@media(max-width:900px){
+  body{padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+  .shell{width:100%}
+  .top{width:100%;min-height:68px;height:auto;padding:10px max(14px,env(safe-area-inset-right)) 10px max(14px,env(safe-area-inset-left));align-items:center;flex-wrap:nowrap}
+  .top>div:first-child{flex:1 1 auto;min-width:0}
+  .top strong,.top h1{font-size:17px;line-height:1.15}
+  .top small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .top-actions{flex:0 0 auto;flex-wrap:nowrap}
+  .content,.layout{width:100%;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+  .mobile-nav{left:max(8px,env(safe-area-inset-left));right:max(8px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));padding:6px}
+  .mobile-nav a{min-height:50px;touch-action:manipulation}
+  .tabs,.browse-categories,.view-switch{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .tabs::-webkit-scrollbar,.browse-categories::-webkit-scrollbar,.view-switch::-webkit-scrollbar{display:none}
+  .tabs button,.browse-categories button,.view-switch button{flex:0 0 auto;white-space:nowrap}
+  .forecast7,.forecast7-v2,.hourly,.hourly-strip,.hourly-v2,.map-trip-tray{overscroll-behavior-inline:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+}
+
+@media(max-width:620px){
+  .content,.layout{padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+  .card,.day-engine-card{padding:14px;border-radius:14px}
+  .top-actions .btn{padding-inline:11px;font-size:12px;white-space:nowrap}
+  .hero{min-height:470px;border-radius:18px}
+  .hero-copy{min-height:0;padding:28px 22px}
+  .hero h1{font-size:clamp(38px,12vw,52px);line-height:.98}
+  .hero p,.hero-sub{font-size:15px;line-height:1.5}
+  .hero-actions,.hero-actions .btn{width:100%}
+  .section-head{align-items:flex-start;flex-wrap:wrap}
+  .section-head h2{font-size:23px}
+  .live-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start}
+
+  .explore-intro h1,.intro h1{font-size:clamp(34px,11vw,46px)}
+  .intro-stat{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .intro-stat div{padding:10px 6px}
+  .intro-stat strong{font-size:19px}
+  .filters,.chooser{display:grid;grid-template-columns:1fr;width:100%}
+  .filters input,.filters select,.chooser select,.chooser .btn{grid-column:auto;width:100%;min-width:0}
+  .results-count{margin-left:0}
+  .explore-map{height:min(68svh,520px);min-height:420px;border-radius:16px}
+  .map-preview{max-height:calc(100% - 20px);overflow-y:auto}
+  .map-legend{right:10px;bottom:10px;width:fit-content;max-width:calc(100% - 20px)}
+  .peak-card{min-height:0}
+  .peak-photo{min-width:0}
+  .detail .hero,.detail .hero-copy{min-height:440px}
+  .detail .hero-copy{padding:24px 18px}
+  .hero-stats,.quick,.route-overview{grid-template-columns:1fr 1fr}
+  .tabs{top:68px;margin-inline:-12px;padding-inline:12px}
+  .trail-map{height:min(60svh,400px);min-height:320px}
+  .media-stage{min-height:260px}
+  .media-stage img,.pano-scroll img{height:280px}
+  .summit-stage{min-height:300px}
+  .compass-ring{width:min(250px,72vw);height:min(250px,72vw)}
+  .nearby{grid-template-columns:1fr}
+
+  .headline,.source,.weather-alert{min-width:0}
+  .source{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start}
+  .weather-now{grid-template-columns:58px minmax(0,1fr);gap:10px;padding:12px}
+  .weather-orb,.weather-icon{width:58px;height:58px;font-size:28px}
+  .weather-now strong,.weather-temp{font-size:30px}
+  .journey{align-items:stretch}
+  .journey span{display:inline-flex;align-items:center}
+
+  .plan-head{display:grid;gap:12px;padding:14px}
+  .plan-head-actions,.planner-view-switch{width:100%}
+  .planner-view-switch button{flex:1 1 0}
+  .plan-head-actions>.btn{flex:1 1 calc(50% - 4px)}
+  .date{flex-wrap:wrap}
+  .date input{min-height:44px;max-width:100%}
+  .map{height:min(72svh,600px);min-height:500px}
+  .map-discovery{left:48px;right:8px}
+  .map-discovery select,.map-search-wrap input{min-height:44px}
+  .map-search-results{max-height:min(42svh,300px)}
+  .map-peak-preview{max-height:calc(100% - 180px);overflow-y:auto;overscroll-behavior:contain}
+  .map-note{right:8px;max-width:calc(100% - 16px)}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{border-right:1px solid #e7eeea;border-bottom:1px solid #e7eeea}
+  .stat:nth-child(2n){border-right:0}
+  .stat:last-child{grid-column:1/-1;border-bottom:0}
+  .planner-list-head,.day-engine-head{display:grid;gap:8px}
+  .planner-list-head{align-items:start}
+  .day,.landmark-btn,.factor-mini-row{min-width:0}
+  .daymain input{min-height:40px}
+  .reorder button{width:40px;height:40px}
+  .live-source{grid-template-columns:34px minmax(0,1fr)}
+  .live-source .freshness{grid-column:2;justify-self:start}
+  .live-controls,.weather-actions-v2{grid-template-columns:1fr}
+  .profile{height:190px}
+  .toast{left:12px;right:12px;bottom:calc(86px + env(safe-area-inset-bottom));text-align:center}
+  .pwa-tools{position:static;max-width:none;margin:4px 12px 14px;padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:#fff;border:1px solid #dde6e2;border-radius:14px}
+  .pwa-tools button,.pwa-tools .status{width:100%;min-width:0}
+  .pwa-tools .status{grid-column:1/-1}
+}
+
+@media(max-width:430px){
+  .top small{display:none}
+  .top-actions .btn{min-height:42px;padding-inline:10px}
+  .mobile-nav{gap:2px}
+  .mobile-nav a{font-size:9px;padding-inline:1px}
+  .mobile-nav span{font-size:16px}
+  .steps,.classes,.risk-grid,.planner-card-grid,.day-engine-controls,.day-engine-kpis,.summit-list{grid-template-columns:1fr}
+  .path-card{min-height:220px}
+  .live-row,.source{grid-template-columns:1fr}
+  .headline,.weather-alert{flex-wrap:wrap}
+  .headline .chip{margin-left:0}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .hero-stats div:nth-child(2n){border-right:0}
+  .actions,.weather-actions,.quick{grid-template-columns:1fr}
+  .map-preview-photo,.map-peak-preview .preview-photo{height:105px}
+  .map-peak-preview .preview-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .day{grid-template-columns:auto minmax(0,1fr)}
+  .reorder{grid-column:2;grid-template-columns:40px 40px}
+  .pwa-tools{grid-template-columns:1fr}
+  .pwa-tools .status{grid-column:1}
+}
+
+@media(max-width:370px){
+  .top-actions .btn:not(.primary){display:none}
+  .intro-stat,.hero-stats,.route-overview,.selected-grid{grid-template-columns:1fr}
+}
+
+@media(max-height:520px) and (orientation:landscape) and (max-width:900px){
+  .mobile-nav{left:auto;width:min(440px,calc(100% - 16px))}
+  .explore-map,.map{height:82svh;min-height:360px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
